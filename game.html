@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="width=device-width, initial-scale=1.0">
+        <title>Java Script Game</title>
+        <link rel="stylesheet" href="Assets/game.css">
+        <link rel="stylesheet" href="Assets/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="game" class="justify-center flex-column">
+                <div id="hud">
+                    <div class="hud-item">
+                        <p id="progressText" class="hud-prefix">
+                            question
+                        </p>
+                        <div id="progressbar">
+                            <div id="progressBarFull"></div>
+                        </div>
+                    </div>
+                    <div class="hud-item">
+                        <p class="hud-prefix">
+                            Score
+                        </p>
+                        <h1 class="hud-main-text" id="score">
+                           0
+                        </h1>
+                        <h1 class="timer">Timer 0</h1>
+                    </div>
+                    
+                </div>
+                <h1 id="question">What is the answer to this question</h1>
+                <div class="choice-container">
+                    <p class="choice-prefix">A</p>
+                    <p class="choice-text" data-number="1">Choice</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-prefix">B</p>
+                    <p class="choice-text" data-number="2">Choice2</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-prefix">C</p>
+                    <p class="choice-text" data-number="3">Choice3</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-prefix">D</p>
+                    <p class="choice-text" data-number="4">Choice4</p>
+                </div>
+            </div>
+        </div>
+        <script src="Assets/game.js"></script>
+    </body>
+</html>
