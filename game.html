@@ -12,14 +12,6 @@
             <div id="game" class="justify-center flex-column">
                 <div id="hud">
                     <div class="hud-item">
-                        <p id="progressText" class="hud-prefix">
-                            question
-                        </p>
-                        <div id="progressbar">
-                            <div id="progressBarFull"></div>
-                        </div>
-                    </div>
-                    <div class="hud-item">
                         <p class="hud-prefix">
                             Score
                         </p>
@@ -31,22 +23,22 @@
                     
                 </div>
                 <h1 id="question">What is the answer to this question</h1>
-                <div class="choice-container">
+                <button class="choice-container" data-number="0">
                     <p class="choice-prefix">A</p>
-                    <p class="choice-text" data-number="1">Choice</p>
-                </div>
-                <div class="choice-container">
+                    <p class="choice-text" >Choice</p>
+                </button>
+                <button class="choice-container" data-number="1">
                     <p class="choice-prefix">B</p>
-                    <p class="choice-text" data-number="2">Choice2</p>
-                </div>
-                <div class="choice-container">
+                    <p class="choice-text" >Choice2</p>
+                </button>
+                <button class="choice-container" data-number="2">
                     <p class="choice-prefix">C</p>
-                    <p class="choice-text" data-number="3">Choice3</p>
-                </div>
-                <div class="choice-container">
+                    <p class="choice-text">Choice3</p>
+                </button>
+                <button class="choice-container" data-number="3">
                     <p class="choice-prefix">D</p>
-                    <p class="choice-text" data-number="4">Choice4</p>
-                </div>
+                    <p class="choice-text">Choice4</p>
+                </button>
             </div>
         </div>
         <script src="Assets/game.js"></script>
