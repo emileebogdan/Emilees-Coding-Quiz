@@ -1,51 +1,41 @@
-const question = document.querySelector('#question');
-const choices = Array.from(document.querySelector('.choice-text'));
-const progressText = document.querySelector('#progressText');
-const scroeText = document.querySelector('#score');
-const progressBarFull = document.querySelector('#progressBarFull');
-
-let currentQuestion = {};
-let acceptingAnswers = true;
-let score = 0;
-let questionCounter = 0;
-let availableQuestions = []
+var timer;
+var timerInterval = document.getElementById("timerInterval");
 
 let questions = [
   {
     question: "What Does JS Stand For?",
-    choice1: "Absolutely Nothing",
-    choice2: "John Stamos",
-    choice3: "Java Script",
-    choice4: "Java Joe's",
-    answer: 3,
-},
+    choices: ["Absolutely Nothing", "John Stamos", "Java Script", "Java Joe's"
+    ],
+    answer: "Java Script"
+  },
 
-{
-  question: "What Number is the First Object in an Array?",
-  choice1: "612",
-  choice2: "1",
-  choice3: "I don't know, man.",
-  choice4: "0",
-  answer: 4,
-},
+  {
+    question: "What Number is the First Object in an Array?",
+    choices: ["612", "1", "I don't know, man.", "0"],
+    answer: "0"
+  },
 
-{
-  question: "What do you link in your HTML to make your JS work?",
-  choice1: "Your Script File",
-  choice2: "Your CSS File",
-  choice3: "Nothing, it just Works",
-  choice4: "Dang it, that's why it's not working",
-  answer: 1,
-}
+  {
+    question: "What do you link in your HTML to make your JS work?",
+    choices: ["Your Script File", "Your CSS File", "Nothing, it just Works", "Dang it, that's why it's not working"],
+    answer: "Your Script File",
+  }
 ]
 
-const SCORE_POINTS = 100
-const MAX_QUESTIONS = 3
+var clockTick = function(){
+  var seconds = +timerInterval.textContent;
+  timerInterval.textContent = seconds - 1;
+  if (seconds <= 1) {
+    clearInterval(timer);
+  } 
+};
+var getNewQuestion = function(){};
 
 startGame = () => {
-  questionCounter = 0
-  score = 0
-  availableQuestions = [...questions]
+  timer = setInterval(clockTick, 1000)
   getNewQuestion()
 }
+
+
+startGame();
 
