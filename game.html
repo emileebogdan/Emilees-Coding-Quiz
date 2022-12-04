@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="width=device-width, initial-scale=1.0">
-        <title>Java Script Game</title>
-        <link rel="stylesheet" href="Assets/game.css">
-        <link rel="stylesheet" href="Assets/style.css">
-    </head>
-    <body>
-        <div class="container">
-            <div id="game" class="justify-center flex-column">
-                <div id="hud">
-                    <div class="hud-item">
-                        <p class="hud-prefix">
-                            Score
-                        </p>
-                        <h1 class="hud-main-text" id="score">
-                           0
-                        </h1>
-                        <h1 class="timer">Timer <span id ="timerInterval" >60</span></h1>
-                    </div>
-                    
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Game</title>
+    <link rel="stylesheet" href="Assets/game.css">
+    <link rel="stylesheet" href="Assets/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="game" class="justify-center flex-column">
+            <div id="hud">
+                <div class="hud-item" hidden id="startButton">
+                    <button class="btn" >Start</button>
                 </div>
+                <div class="hud-item">
+                    <p class="hud-prefix">
+                        Score
+                    </p>
+                    <h1 class="hud-main-text" id="score">
+                        0
+                    </h1>
+                    <h1 class="timer">Timer <span id="timerInterval">60</span></h1>
+                </div>
+
+            </div>
+            <div id="gameDisplay">
                 <h1 id="question">What is the answer to this question</h1>
                 <button class="choice-container" data-number="0">
                     <p class="choice-prefix">A</p>
-                    <p class="choice-text" >Choice</p>
+                    <p class="choice-text">Choice</p>
                 </button>
                 <button class="choice-container" data-number="1">
                     <p class="choice-prefix">B</p>
-                    <p class="choice-text" >Choice2</p>
+                    <p class="choice-text">Choice2</p>
                 </button>
                 <button class="choice-container" data-number="2">
                     <p class="choice-prefix">C</p>
@@ -41,6 +47,8 @@
                 </button>
             </div>
         </div>
-        <script src="Assets/game.js"></script>
-    </body>
+    </div>
+    <script src="Assets/game.js"></script>
+</body>
+
 </html>

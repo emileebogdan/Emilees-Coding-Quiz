@@ -3,6 +3,9 @@ var timerInterval = document.getElementById("timerInterval");
 var question = document.getElementById("question");
 var button = document.getElementsByClassName("choice-container");
 var score = document.getElementById("score");
+var startButton = document.getElementById("startButton");
+var game = document.getElementById("game");
+var gameDisplay = document.getElementById("gameDisplay");
 
 let questions = [
   {
@@ -27,7 +30,7 @@ let questions = [
 var currentQuestion = 0;
 
 var clockTick = function (decrement = 1) {
-  var seconds = Math.max(0,+timerInterval.textContent - decrement);
+  var seconds = Math.max(0, +timerInterval.textContent - decrement);
   timerInterval.textContent = seconds;
   if (seconds <= 0) {
     endQuiz();
@@ -51,9 +54,9 @@ var answerQuestion = function (event) {
   // verify if it's right or wrong
   const btn = event.currentTarget;
   const currQues = questions[currentQuestion];
-    // if wrong remove time
+  // if wrong remove time
   const isCorrect = currQues.answer == btn.dataset.number;
-  if (!isCorrect){
+  if (!isCorrect) {
     clockTick(2)
   }
   // if right give points
@@ -66,13 +69,25 @@ var answerQuestion = function (event) {
 
 };
 
-var endQuiz = function() {
-  
+var endQuiz = function () {
+  clearInterval(timer);
+  startButton.removeAttribute("hidden");
+  gameDisplay.setAttribute("hidden", true);
 };
 
+
 var startGame = () => {
+  // reset score
+  score.textContent = 0;
+  // reset timer
+  timerInterval.textContent = 60;
+  // bring questions back
+  currentQuestion = 0;
+  startButton.setAttribute("hidden", true);
+  gameDisplay.removeAttribute("hidden");
   timer = setInterval(clockTick, 1000)
   getNewQuestion()
+
 };
 
 startGame();
@@ -80,3 +95,5 @@ startGame();
 for (const btn of button) {
   btn.addEventListener("click", answerQuestion)
 };
+
+startButton.addEventListener("click", startGame);
